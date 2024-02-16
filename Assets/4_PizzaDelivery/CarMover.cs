@@ -1,7 +1,9 @@
 using UnityEngine;
+using PZD.Audio;
 
 namespace PZD.Movement
 {
+    [RequireComponent(typeof(CarAudio))]
     public class CarMover : MonoBehaviour
     {
         [SerializeField] float speed = 5f;
@@ -9,11 +11,13 @@ namespace PZD.Movement
 
         Rigidbody rb;
         Animator animator;
+        CarAudio carAudio;
 
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
             animator = GetComponent<Animator>();
+            carAudio = GetComponent<CarAudio>();
         }
 
         public void Move(float zAxis)
@@ -23,6 +27,7 @@ namespace PZD.Movement
             rb.velocity = directionalSpeed;
 
             animator.SetFloat("zAxis", zAxis);
+            carAudio.EngineSound(Mathf.Abs(zAxis) > 0 ? Mathf.Abs(zAxis) : -1);
         }
 
         public void Turn(float xAxis)
