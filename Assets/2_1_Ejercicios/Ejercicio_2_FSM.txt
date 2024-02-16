@@ -1,0 +1,24 @@
+*** Ejercicio 2 ***
+
+- Lee las instrucciones completas antes de comenzar
+
+- Abre la escena de la carpeta 'TimerFSM/Scene'.
+- Crea tu propio Finite State Machine (FSM) como la mostrada en los ejemplos.
+- Para los estados, utiliza cualquier método que prefieras:
+- - Clases genéricas, 'Scriptable Objects', o 'Monobehaviours'.
+- Haz que el NPC cambie de estado después de cierto tiempo.
+- - El tiempo no debe ser menos de 1 segundo, y no más de 5 segundos.
+- - El tiempo debe ser ajustable en el inspector o debe ser asignado al azar.
+- El texto de la parte superior debe cambiar según el nombre del estado.
+- Debes crear al menos 5 estados.
+
+[TIPS]
+- En la carpeta 'TimerFSM/Scripts' hay dos scripts, puedes usarlos o crear los propios.
+- Recuerda que puedes usar 'attributes' para limitar el rango de tiempo en el inspector.
+
+[EXTRAS]
+- Sin usar 'coroutines'.
+- Usa solo una variable para el contador de tiempo.
+- El nombre del estado se puede cambiar en el inspector.
+- - Incluso si usas clases genéricas.
+- No uses más de dos scripts.

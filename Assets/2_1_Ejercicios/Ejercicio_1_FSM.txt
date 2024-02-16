@@ -1,0 +1,7 @@
+*** Ejercicio 1 ***
+
+Inicial
+
+- Crea otros 5 estados para la FSM.
+- Crea un objeto nuevo para cada estado.
+- Debes llenar los parámetros de cada estado en el inspector.
