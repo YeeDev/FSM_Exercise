@@ -1,31 +1,34 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class SimpleStateMachine : MonoBehaviour
+namespace SFSM
 {
-    [SerializeField] SimpleState initialState;
-    [SerializeField] Text stateText;
-
-    const string stateMessage = "Estado actual: ";
-
-    MeshFilter meshFilter;
-    SimpleState currentState;
-
-    private void Awake()
+    public class SimpleStateMachine : MonoBehaviour
     {
-        meshFilter = GetComponent<MeshFilter>();
+        [SerializeField] SimpleState initialState;
+        [SerializeField] Text stateText;
 
-        currentState = initialState;
-    }
+        const string stateMessage = "Estado actual: ";
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
+        MeshFilter meshFilter;
+        SimpleState currentState;
+
+        private void Awake()
         {
-            currentState = currentState.NextState;
-            meshFilter.mesh = currentState.Mesh;
+            meshFilter = GetComponent<MeshFilter>();
 
-            stateText.text = stateMessage + currentState.name;
+            currentState = initialState;
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                currentState = currentState.NextState;
+                meshFilter.mesh = currentState.Mesh;
+
+                stateText.text = stateMessage + currentState.name;
+            }
         }
     }
 }
