@@ -9,10 +9,7 @@ namespace PZD.Controls
         float xAxis, zAxis;
         CarMover carMover;
 
-        private void Awake()
-        {
-            carMover = GetComponent<CarMover>();
-        }
+        private void Awake() => carMover = GetComponent<CarMover>();
 
         private void Update()
         {
