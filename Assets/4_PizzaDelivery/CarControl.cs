@@ -1,29 +1,36 @@
 using UnityEngine;
+using PZD.Movement;
 
-namespace PZ.Controls
+namespace PZD.Controls
 {
+    [RequireComponent(typeof(CarMover))]
     public class CarControl : MonoBehaviour
     {
-        [SerializeField] float speed;
-        [SerializeField] float turnSpeed;
-
-        Rigidbody rb;
+        float xAxis, zAxis;
+        CarMover carMover;
 
         private void Awake()
         {
-            rb = GetComponent<Rigidbody>();
+            carMover = GetComponent<CarMover>();
         }
 
         private void Update()
         {
-            if (Input.GetButton("Vertical"))
-            { transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Horizontal") * turnSpeed, 0); }
+            ReadInput();
+            Turn();
         }
 
-        private void FixedUpdate()
+        private void Turn()
         {
-            Vector3 directionalSpeed = transform.forward.normalized * Input.GetAxis("Vertical") * speed;
-            rb.velocity = directionalSpeed;
+            if (Mathf.Abs(zAxis) > Mathf.Epsilon) { carMover.Turn(xAxis); }
+        }
+
+        private void FixedUpdate() => carMover.Move(zAxis);
+
+        private void ReadInput()
+        {
+            xAxis = Input.GetAxis("Horizontal");
+            zAxis = Input.GetAxis("Vertical");
         }
     }
 }
