@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60e2acdb95b947cba8ad35add605146, type: 3}
+  m_Name: Ramp
+  m_EditorClassIdentifier: 
+  nextState: {fileID: 11400000, guid: 9830a051d840a4d50ab08c2fd037a60d, type: 2}
+  mesh: {fileID: 4300000, guid: 8aa7bd084370542b2b702a8364f29b43, type: 2}
