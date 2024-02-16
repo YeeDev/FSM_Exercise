@@ -2,29 +2,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class RandomStatesCreator : MonoBehaviour
+namespace RFSM
 {
-    [SerializeField] List<Mesh> meshes;
-
-    List<RandomState> randomStates;
-
-    public RandomState CreatedRandomStates()
+    public class RandomStatesCreator : MonoBehaviour
     {
-        meshes = meshes.OrderBy(x => Random.value).ToList();
+        [SerializeField] List<Mesh> meshes;
 
-        randomStates = new List<RandomState>();
-        RandomState previousState = null;
+        List<RandomState> randomStates;
 
-        foreach (Mesh mesh in meshes)
+        public RandomState CreatedRandomStates()
         {
-            RandomState newState = new RandomState(mesh);
-            if (previousState != null) { newState.NextState = previousState; }
-            previousState = newState;
-            
-            randomStates.Add(previousState);
-        }
-        randomStates[0].NextState = randomStates[randomStates.Count - 1];
+            meshes = meshes.OrderBy(x => Random.value).ToList();
 
-        return randomStates[0];
+            randomStates = new List<RandomState>();
+            RandomState previousState = null;
+
+            foreach (Mesh mesh in meshes)
+            {
+                RandomState newState = new RandomState(mesh);
+                if (previousState != null) { newState.NextState = previousState; }
+                previousState = newState;
+
+                randomStates.Add(previousState);
+            }
+            randomStates[0].NextState = randomStates[randomStates.Count - 1];
+
+            return randomStates[0];
+        }
     }
 }

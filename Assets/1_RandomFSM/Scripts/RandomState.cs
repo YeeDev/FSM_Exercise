@@ -1,12 +1,15 @@
 using UnityEngine;
 
-public class RandomState
+namespace RFSM
 {
-    Mesh mesh;
-    RandomState nextState;
+    public class RandomState
+    {
+        Mesh mesh;
+        RandomState nextState;
 
-    public Mesh Mesh => mesh;
-    public RandomState NextState { get => nextState; set => nextState = value; }
+        public Mesh Mesh => mesh;
+        public RandomState NextState { get => nextState; set => nextState = value; }
 
-    public RandomState(Mesh mesh) => this.mesh = mesh;
+        public RandomState(Mesh mesh) => this.mesh = mesh;
+    }
 }
