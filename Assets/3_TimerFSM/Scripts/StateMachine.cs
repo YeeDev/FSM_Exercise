@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TFSM
+namespace FSM.Timer
 {
-    public class TimerFSM : MonoBehaviour
+    public class StateMachine : MonoBehaviour
     {
 
     }
