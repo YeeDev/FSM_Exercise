@@ -1,22 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RFSM
+namespace FSM.Random
 {
-    public class RandomFSM : MonoBehaviour
+    public class StateMachine : MonoBehaviour
     {
         [SerializeField] Text stateText;
 
         const string stateMessage = "Estado actual: ";
 
         MeshFilter meshFilter;
-        RandomStatesCreator statesCreator;
-        RandomState currentState;
+        Randomizer statesCreator;
+        State currentState;
 
         private void Awake()
         {
             meshFilter = GetComponent<MeshFilter>();
-            statesCreator = GetComponent<RandomStatesCreator>();
+            statesCreator = GetComponent<Randomizer>();
 
             currentState = statesCreator.CreatedRandomStates();
         }

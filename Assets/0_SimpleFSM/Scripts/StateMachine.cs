@@ -1,17 +1,17 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-namespace SFSM
+namespace FSM.Simple
 {
-    public class SimpleStateMachine : MonoBehaviour
+    public class StateMachine : MonoBehaviour
     {
-        [SerializeField] SimpleState initialState;
+        [SerializeField] State initialState;
         [SerializeField] Text stateText;
 
         const string stateMessage = "Estado actual: ";
 
         MeshFilter meshFilter;
-        SimpleState currentState;
+        State currentState;
 
         private void Awake()
         {

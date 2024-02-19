@@ -2,24 +2,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-namespace RFSM
+namespace FSM.Random
 {
-    public class RandomStatesCreator : MonoBehaviour
+    public class Randomizer : MonoBehaviour
     {
         [SerializeField] List<Mesh> meshes;
 
-        List<RandomState> randomStates;
+        List<State> randomStates;
 
-        public RandomState CreatedRandomStates()
+        public State CreatedRandomStates()
         {
-            meshes = meshes.OrderBy(x => Random.value).ToList();
+            meshes = meshes.OrderBy(x => UnityEngine.Random.value).ToList();
 
-            randomStates = new List<RandomState>();
-            RandomState previousState = null;
+            randomStates = new List<State>();
+            State previousState = null;
 
             foreach (Mesh mesh in meshes)
             {
-                RandomState newState = new RandomState(mesh);
+                State newState = new State(mesh);
                 if (previousState != null) { newState.NextState = previousState; }
                 previousState = newState;
 

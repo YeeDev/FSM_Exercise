@@ -1,17 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CFSM
+namespace FSM.Conditional
 {
-    public class ConditionalFSM : MonoBehaviour
+    public class StateMachine : MonoBehaviour
     {
-        [SerializeField] ConditionalState initialState;
+        [SerializeField] State initialState;
         [SerializeField] Text stateText;
 
         const string stateMessage = "Estado actual: ";
 
         MeshFilter meshFilter;
-        ConditionalState currentState;
+        State currentState;
 
         private void Awake()
         {

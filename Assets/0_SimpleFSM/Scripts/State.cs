@@ -1,14 +1,14 @@
 using UnityEngine;
 
-namespace SFSM
+namespace FSM.Simple
 {
     [CreateAssetMenu(fileName = "New State", menuName = "State")]
-    public class SimpleState : ScriptableObject
+    public class State : ScriptableObject
     {
-        [SerializeField] SimpleState nextState;
+        [SerializeField] State nextState;
         [SerializeField] Mesh mesh;
 
-        public SimpleState NextState => nextState;
+        public State NextState => nextState;
         public Mesh Mesh => mesh;
     }
 }
