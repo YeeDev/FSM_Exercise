@@ -20,5 +20,5 @@
 - Sin usar 'coroutines'.
 - Usa solo una variable para el contador de tiempo.
 - El nombre del estado se puede cambiar en el inspector.
-- - Incluso si usas clases genéricas.
+- - Incluso si usas clases que no sean componentes.
 - No uses más de dos scripts.
